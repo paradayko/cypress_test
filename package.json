@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "npx eslint ."
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,11 @@
   "homepage": "https://github.com/paradayko/cypress_test#readme",
   "description": "",
   "devDependencies": {
-    "cypress": "^14.2.0"
+    "@eslint/js": "^9.23.0",
+    "cypress": "^14.2.0",
+    "eslint": "^9.23.0",
+    "eslint-plugin-prettier": "^5.2.5",
+    "globals": "^16.0.0",
+    "prettier": "^3.5.3"
   }
 }
