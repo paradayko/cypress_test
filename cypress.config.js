@@ -1,10 +1,11 @@
+
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   viewportWidth: 1280,
   viewportHeight: 720,
-  screenshotsFolder: path.join(__dirname, "cypress", "screenshots"),
-  videosFolder: path.join(__dirname, "cypress", "videos"),
+  screenshotsFolder: (__filename, "cypress", "screenshots"),
+  videosFolder: (__filename, "cypress", "videos"),
   screenshotOnRunFailure: true,
   video: true,
   e2e: {

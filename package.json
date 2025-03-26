@@ -7,7 +7,6 @@
     "format": "npx eslint ."
   },
   "repository": {
-    "type": "git",
     "url": "git+https://github.com/paradayko/cypress_test.git"
   },
   "author": "",
@@ -20,6 +19,7 @@
   "devDependencies": {
     "@eslint/js": "^9.23.0",
     "cypress": "^14.2.0",
+    "cypress-xpath": "^2.0.1",
     "eslint": "^9.23.0",
     "eslint-plugin-prettier": "^5.2.5",
     "globals": "^16.0.0",
