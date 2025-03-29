@@ -12,5 +12,6 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners hereі
     },
+    baseUrl: 'https://qauto.forstudy.space'
   },
 });
