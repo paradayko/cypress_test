@@ -24,20 +24,22 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 /// <reference types="cypress-xpath" />
-Cypress.Commands.add('login', {}, (email, password) => { 
+Cypress.Commands.add('login', () => { 
+  const email = Cypress.env('defaultUserEmail')
+  const password = Cypress.env('defaultUserPassword')
     cy.contains('button', 'Sign In').click()
     cy.get('form input[name="email"]').type(email);
     cy.get('form input[name="password"]').type(password);
     cy.contains('button', 'Login').click()
   })
   
-  Cypress.Commands.overwrite('visit', (originalFn, ...args)  => { 
-    originalFn(args[0], {
+  Cypress.Commands.overwrite('visit', (originalFn, url, options)  => { 
+    originalFn(url, {
       auth: {
         username: 'guest',
         password: 'welcome2qauto'
       },
-      ...args
+      ...options
     })
   })
 
