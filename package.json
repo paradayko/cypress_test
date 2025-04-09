@@ -4,7 +4,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "npx eslint ."
+    "format": "npx eslint .",
+    "cypress:stage:run": "npx cypress run --env TEST_ENVIRONMENT=stage",
+    "cypress:prod:run": "npx cypress run --env TEST_ENVIRONMENT=prod",
+    "cypress:stage:open": "npx cypress open --env TEST_ENVIRONMENT=stage",
+    "cypress:prod:open": "npx cypress open --env TEST_ENVIRONMENT=prod",
+    "report:merge": "npx mochawesome-merge cypress/reports/*.json > cypress/reports/merged-report.json",
+    "report:generate": "npx marge cypress/reports/merged-report.json -f report -o cypress/reports/html",
+    "test:stage:report": "npm run cypress:stage:run && npm run report:merge && npm run report:generate",
+    "test:prod:report": "npm run cypress:prod:run && npm run report:merge && npm run report:generate"
   },
   "repository": {
     "url": "git+https://github.com/paradayko/cypress_test.git"
