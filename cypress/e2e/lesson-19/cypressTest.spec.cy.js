@@ -1,4 +1,4 @@
-import { ButtonConfigs } from "./Configs";
+import ButtonConfigs from "../../support/PageObject"
 const buttonConfigs = new ButtonConfigs();
 
 function EmailGenerate() {

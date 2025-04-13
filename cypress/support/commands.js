@@ -32,6 +32,18 @@ Cypress.Commands.add('login', () => {
     cy.get('form input[name="password"]').type(password);
     cy.contains('button', 'Login').click()
   })
+
+  Cypress.Commands.add('createExpense', (expenseData) => {
+    cy.request({
+      method: 'POST',
+      url: '/api/expenses',
+      body: expenseData
+    }).then((response) => {
+      expect(response.status).to.eq(201);
+      expect(response.body.status).to.eq('ok');
+      cy.wrap(response.body.data).as('createdExpense');
+    });
+  });
   
   Cypress.Commands.overwrite('visit', (originalFn, url, options)  => { 
     originalFn(url, {
