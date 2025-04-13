@@ -1,5 +1,5 @@
-import GaragePage from "./PageObject/GaragePage";
-import ExpensesPage from "./PageObject/ExpensesPage";
+import GaragePage from "../../support/PageObject"
+import ExpensesPage from "../../support/PageObject"
 const garagePageConfig = new GaragePage()
 const expensesPageConfig = new ExpensesPage()
 
